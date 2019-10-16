@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="brandy.controladores.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Partido">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tableViewPartidos" layoutX="17.0" layoutY="14.0" prefHeight="200.0" prefWidth="606.0">
+              <columns>
+
+                <TableColumn text="Local">
+                  <cellValueFactory><PropertyValueFactory property="equipo_Local" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Visitante">
+                  <cellValueFactory><PropertyValueFactory property="equipo_Visitante" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Resultado local">
+                  <cellValueFactory><PropertyValueFactory property="resultado_Lo" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Resultado Visi">
+                  <cellValueFactory><PropertyValueFactory property="resultado_Vi" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Division">
+                  <cellValueFactory><PropertyValueFactory property="division" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="date">
+                  <cellValueFactory><PropertyValueFactory property="Fecha" />
+                  </cellValueFactory>
+                </TableColumn>
+              </columns>
+            </TableView>
+            <Button fx:id="btAnadir" layoutX="47.0" layoutY="329.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Añadir" />
+         </children></AnchorPane>
+  </children>
+</VBox>
