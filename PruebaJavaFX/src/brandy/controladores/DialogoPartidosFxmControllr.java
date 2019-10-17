@@ -19,6 +19,7 @@ import java.util.Date;
 
 public class DialogoPartidosFxmControllr {
 
+    private Partido p;
     @FXML
     private TextField tfLocal;
 
@@ -45,7 +46,10 @@ public class DialogoPartidosFxmControllr {
 
     @FXML
     void addPartido(ActionEvent event) {
-
+    if(p!=null){
+            //meter aqui el modificar
+    }
+    else{
         LocalDate localDate = (LocalDate) date.getValue();
         Date date3 = Date.from(localDate.atStartOfDay(
                 ZoneId.systemDefault()).toInstant());
@@ -61,7 +65,14 @@ public class DialogoPartidosFxmControllr {
         Stage stage = ((Stage)((Node)event.getSource()).getScene().getWindow());
         stage.close();
 
+    }
 
+
+
+    }
+
+    public void setPartidoModificar(Partido p, int indice ){
+        this.p=p;
 
 
     }

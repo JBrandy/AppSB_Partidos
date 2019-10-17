@@ -52,11 +52,11 @@ public class MainController implements Initializable {
 
     @FXML
     void generar(ActionEvent event){
-        Parent root = null;
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         try {
-            root = FXMLLoader.load(getClass().getResource("/brandy/vistas/DialogoPartidoFxm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/brandy/vistas/DialogoPartidoFxm.fxml")); // de esta manera
+            Parent root = fxmlLoader.load();
             stage.setTitle("Pantalla principal");
             stage.setScene(new Scene(root, 300, 300));
             stage.show();
@@ -66,6 +66,27 @@ public class MainController implements Initializable {
 
 
     }
+
+    @FXML
+    void modificar(ActionEvent event){
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/brandy/vistas/DialogoPartidoFxm.fxml")); // de esta manera
+            Parent root = fxmlLoader.load();
+            DialogoPartidosFxmControllr controllr = fxmlLoader.getController();
+           Partido partido = tableViewPartidos.getSelectionModel().getSelectedItem();
+            controllr.setPartidoModificar(partido);
+            stage.setTitle("Pantalla alta partido");
+            stage.setScene(new Scene(root, 300, 300));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
