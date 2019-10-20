@@ -47,7 +47,8 @@
                 </TableColumn>
               </columns>
             </TableView>
-            <Button fx:id="btAnadir" layoutX="33.0" layoutY="232.0" mnemonicParsing="false" onAction="#generar" prefHeight="25.0" prefWidth="86.0" text="Añadir" />
+            <Button fx:id="btAnadir" layoutX="33.0" layoutY="232.0" mnemonicParsing="false" onAction="#anadir" prefHeight="25.0" prefWidth="86.0" text="Añadir" />
+            <Button fx:id="btModifcar" layoutX="169.0" layoutY="232.0" mnemonicParsing="false" onAction="#modificar" text="Modifcar" />
          </children></AnchorPane>
   </children>
 </VBox>

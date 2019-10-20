@@ -18,7 +18,11 @@ public class Logica {
 
 	private Logica() {
 		listapartidos.add(new Partido("a","b",2,2, Division.PRIMERA,"2-2",null));
+
+		listapartidosTotal.add(new Partido("a","b",2,2, Division.PRIMERA,"2-2",null));
 	}
+// acuerdate de quitar el-1 en el modoficar partido
+
 
 	public static Logica getInstance() {
 		if (INSTANCE == null) {
@@ -43,7 +47,7 @@ public class Logica {
 
 	public void modificarPartido(Partido p, int indice) {
 		getListapartidos().set(indice, p);
-		getListapartidosTotal().set(indice,p);
+		getListapartidosTotal().set(indice,p);// quitar el menos uno una vez que quite el add partido de la logica El partido esta arriba
 	}
 
 	private List<Partido> getListapartidosTotal() {

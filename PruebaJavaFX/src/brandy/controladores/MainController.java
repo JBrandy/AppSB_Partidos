@@ -49,16 +49,20 @@ public class MainController implements Initializable {
     @FXML
     private Button btAnadir;
 
+    @FXML
+    private Button btModifcar;
+
+
 
     @FXML
-    void generar(ActionEvent event){
+    void anadir(ActionEvent event){
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/brandy/vistas/DialogoPartidoFxm.fxml")); // de esta manera
             Parent root = fxmlLoader.load();
             stage.setTitle("Pantalla principal");
-            stage.setScene(new Scene(root, 300, 300));
+            stage.setScene(new Scene(root, 500, 600));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,8 +79,8 @@ public class MainController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/brandy/vistas/DialogoPartidoFxm.fxml")); // de esta manera
             Parent root = fxmlLoader.load();
             DialogoPartidosFxmControllr controllr = fxmlLoader.getController();
-           Partido partido = tableViewPartidos.getSelectionModel().getSelectedItem();
-            controllr.setPartidoModificar(partido);
+            Partido partido = tableViewPartidos.getSelectionModel().getSelectedItem();
+            controllr.setPartidoModificar(partido,tableViewPartidos.getSelectionModel().getSelectedIndex());
             stage.setTitle("Pantalla alta partido");
             stage.setScene(new Scene(root, 300, 300));
             stage.show();
