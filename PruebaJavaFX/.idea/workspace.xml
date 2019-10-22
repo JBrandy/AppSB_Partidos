@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecbd9e87-fa6a-4f22-8add-90e6922129c1" name="Default Changelist" comment="Hora Cafe">
+    <list default="true" id="ecbd9e87-fa6a-4f22-8add-90e6922129c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/brandy/filtro/Filtros.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PruebaJavaFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PruebaJavaFX.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/controladores/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/controladores/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/logica/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/logica/Logica.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/vistas/mainWinfxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/vistas/mainWinfxm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/controladores/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/controladores/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/logica/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/brandy/vistas/DialogoPartidoFxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/vistas/DialogoPartidoFxm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/vistas/mainWinfxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/vistas/mainWinfxm.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -120,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571329588936</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mañana del domingo">
+      <created>1571571157055</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571571157055</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,7 +145,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="version 1 clase" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1 clase" />
+    <MESSAGE value="Mañana del domingo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mañana del domingo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -150,12 +158,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/brandy/logica/Logica.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/brandy/logica/Logica.java</url>
-          <line>48</line>
+          <line>41</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

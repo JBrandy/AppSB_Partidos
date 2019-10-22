@@ -75,7 +75,7 @@ public class DialogoPartidosFxmControllr implements Initializable {
         String resultado = sA + "-" + sB;
         if(partidoModificar!=null){
             Partido p = new Partido(tfLocal.getText(),tfVisitante.getText(),(Integer.parseInt(tfrLocal.getText())),(Integer.parseInt(tfrVisitante.getText())),cbDivision.getValue(), resultado,date3);
-            Logica.getInstance().modificarPartido(p,indiceModificar);
+            Logica.getInstance().modificarPartido(p);
         }
         else{
             Partido p = new Partido(tfLocal.getText(),tfVisitante.getText(),(Integer.parseInt(tfrLocal.getText())),(Integer.parseInt(tfrVisitante.getText())),cbDivision.getValue(), resultado,date3);
@@ -96,9 +96,8 @@ public class DialogoPartidosFxmControllr implements Initializable {
         stage.close();
     }
 
-    public void setPartidoModificar(Partido partido, int indice) {
+    public void setPartidoModificar(Partido partido) {
         this.partidoModificar = partido;
-        this.indiceModificar = indice;
         tfLocal.setText(partidoModificar.getEquipo_Local());
         tfVisitante.setText(partidoModificar.getEquipo_Visitante());
         tfrLocal.setText(String.valueOf(partido.getResultado_Lo()));
@@ -112,7 +111,7 @@ public class DialogoPartidosFxmControllr implements Initializable {
         if(localDate!=null) {
             Date date3 = Date.from(localDate.atStartOfDay(
                     ZoneId.systemDefault()).toInstant());
-            partidoModificar.setDate(date3);
+            partido.setDate(date3);
         }
 
 
