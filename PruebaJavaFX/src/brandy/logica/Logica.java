@@ -38,8 +38,8 @@ public class Logica {
 
 
 	public void modificarPartido(Partido p) {
-		int indice = getListaPartidos().indexOf(p)+1;
-		getListaPartidos().set(indice, p);
+		int indice = listaPartidos.indexOf(p);
+		listaPartidos.set(indice, p);
 	}
 
 

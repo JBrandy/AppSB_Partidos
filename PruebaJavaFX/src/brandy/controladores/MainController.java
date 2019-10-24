@@ -71,7 +71,8 @@ public class MainController implements Initializable {
             Parent root = fxmlLoader.load();
             stage.setTitle("Alta Partido");
             stage.setScene(new Scene(root, 1000, 600));
-            stage.show();
+            stage.showAndWait();
+            filtrar();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,7 +91,8 @@ public class MainController implements Initializable {
             controllr.setPartidoModificar(partido);
             stage.setTitle("Pantalla Modificar partido");
             stage.setScene(new Scene(root, 1000, 750));
-            stage.show();
+            stage.showAndWait();
+            filtrar();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -126,12 +128,12 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tableViewPartidos.setItems((ObservableList<Partido>) Logica.getInstance().getListaPartidos());
+              tableViewPartidos.setItems((ObservableList<Partido>) Logica.getInstance().getListaPartidos());
 
         cbDivisionMain.getItems().addAll(Division.values());
         filtroDivi = new Filtros((ObservableList<Partido>) Logica.getInstance().getListaPartidos());
 
-       // cbDivisionMain.p
+
         cbDivisionMain.valueProperty().addListener(new ChangeListener<Division>() {
             @Override
             public void changed(ObservableValue<? extends Division> observableValue, Division division, Division t1) {

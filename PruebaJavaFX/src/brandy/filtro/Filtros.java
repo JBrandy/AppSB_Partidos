@@ -8,7 +8,7 @@ public class Filtros {
     private ObservableList<Partido> listaPartidos;
     private ObservableList<Partido> listaFiltrada;
 
-    public Filtros(ObservableList<Partido> listaPersonas) {
+    public Filtros(ObservableList<Partido> listaPartidos) {
         this.listaPartidos = listaPartidos;
         listaFiltrada = FXCollections.observableArrayList();
     }
@@ -19,7 +19,7 @@ public class Filtros {
         {
             //Necesitamos filtrar
             listaFiltrada.clear();
-            for (Partido partido : Logica.getInstance().getListaPartidos())
+            for (Partido partido : listaPartidos)
             {
                 if (partido.getDivision().equals(division))
                     listaFiltrada.add(partido);

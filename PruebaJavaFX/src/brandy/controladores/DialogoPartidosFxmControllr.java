@@ -74,8 +74,16 @@ public class DialogoPartidosFxmControllr implements Initializable {
         String sB = String.valueOf(resultado_Vi);
         String resultado = sA + "-" + sB;
         if(partidoModificar!=null){
-            Partido p = new Partido(tfLocal.getText(),tfVisitante.getText(),(Integer.parseInt(tfrLocal.getText())),(Integer.parseInt(tfrVisitante.getText())),cbDivision.getValue(), resultado,date3);
-            Logica.getInstance().modificarPartido(p);
+            partidoModificar.setEquipo_Local(tfLocal.getText());
+            partidoModificar.setEquipo_Visitante(tfVisitante.getText());
+            partidoModificar.setResultado_Vi(Integer.parseInt(tfrVisitante.getText()));
+            partidoModificar.setResultado_Lo(Integer.parseInt(tfrLocal.getText()));
+            partidoModificar.setDivision(cbDivision.getValue());
+            partidoModificar.setResultado(resultado);
+            partidoModificar.setDate(date3);
+
+          //  Partido p = new Partido(tfLocal.getText(),tfVisitante.getText(),(Integer.parseInt(tfrLocal.getText())),(Integer.parseInt(tfrVisitante.getText())),cbDivision.getValue(), resultado,date3);
+            Logica.getInstance().modificarPartido(partidoModificar);
         }
         else{
             Partido p = new Partido(tfLocal.getText(),tfVisitante.getText(),(Integer.parseInt(tfrLocal.getText())),(Integer.parseInt(tfrVisitante.getText())),cbDivision.getValue(), resultado,date3);
@@ -98,8 +106,8 @@ public class DialogoPartidosFxmControllr implements Initializable {
 
     public void setPartidoModificar(Partido partido) {
         this.partidoModificar = partido;
-        tfLocal.setText(partidoModificar.getEquipo_Local());
-        tfVisitante.setText(partidoModificar.getEquipo_Visitante());
+        tfLocal.setText(partido.getEquipo_Local());
+        tfVisitante.setText(partido.getEquipo_Visitante());
         tfrLocal.setText(String.valueOf(partido.getResultado_Lo()));
         tfrVisitante.setText(String.valueOf(partido.getResultado_Vi()));
         cbDivision.getSelectionModel().select(partido.getDivision());
