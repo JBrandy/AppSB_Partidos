@@ -14,7 +14,7 @@ public class Logica {
 
 
 	private Logica() {
-		listaPartidos.add(new Partido("a","b",2,2, Division.PRIMERA,"2-2",null));
+		//listaPartidos.add(new Partido("a","b",2,2, Division.PRIMERA,"2-2",null));
 
 	}
 // acuerdate de quitar el-1 en el modoficar partido

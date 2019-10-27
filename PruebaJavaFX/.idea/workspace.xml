@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecbd9e87-fa6a-4f22-8add-90e6922129c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/balon.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/Launcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/controladores/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/controladores/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/logica/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/logica/Logica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/vistas/mainWinfxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/vistas/mainWinfxm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/brandy/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/controladores/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/controladores/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/brandy/filtro/Filtros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/filtro/Filtros.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/logica/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/brandy/vistas/mainWinfxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/vistas/mainWinfxm.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +37,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -132,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571736795389</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Funciona/ modificar tamaños / Pendiente de Refactorizar ¿?¿">
+      <created>1571901924323</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571901924323</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,7 +162,8 @@
     <MESSAGE value="version 1 clase" />
     <MESSAGE value="Mañana del domingo" />
     <MESSAGE value="Hora del Cafe nome lo actualiza instantaneo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hora del Cafe nome lo actualiza instantaneo" />
+    <MESSAGE value="Funciona/ modificar tamaños / Pendiente de Refactorizar ¿?¿" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funciona/ modificar tamaños / Pendiente de Refactorizar ¿?¿" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

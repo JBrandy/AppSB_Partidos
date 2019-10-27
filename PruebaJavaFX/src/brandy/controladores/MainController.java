@@ -1,6 +1,7 @@
 package brandy.controladores;
 
 
+import brandy.Launcher;
 import brandy.filtro.Filtros;
 import brandy.logica.Logica;
 import brandy.models.Division;
@@ -15,11 +16,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -61,6 +64,108 @@ public class MainController implements Initializable {
     @FXML
     private Button btQuitarFiltro;
 
+    @FXML
+    private Button btcargar;
+
+    @FXML
+    private Button btGuardar;
+
+
+
+    @FXML
+    void cargar(ActionEvent event) {
+        Stage stage = new Stage();
+        stage.setTitle("Ejemplo FileChooser");
+        FileChooser fileChooser = new FileChooser();
+        //Este paso es opcional, para dejar al usuario solo seleccionar ciertos tipos de archivo
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos .dat (*.dat)", "*.dat");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Show save file dialog
+        File file = fileChooser.showOpenDialog(stage);
+
+        if (file != null) {
+            //Hacer lo que queramos con el archivo. Normalmente leerlo y cargarlo.
+            ArrayList<Partido> listaAuxLeer = new ArrayList<Partido>();
+
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+            try {
+
+                fis = new FileInputStream(file.getAbsolutePath());
+                ois = new ObjectInputStream(fis);
+
+                listaAuxLeer = (ArrayList<Partido>) ois.readObject();
+                Logica.getInstance().getListaPartidos().addAll(listaAuxLeer);
+
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }finally{
+
+
+                try{
+                    if( null != fis ){
+                        fis.close();
+                    }
+                }catch (Exception e2){
+                    e2.printStackTrace();
+                }
+            }
+        }
+        }
+
+
+
+
+
+    @FXML
+    void guardar(ActionEvent event) {
+        Stage stage = new Stage();
+        stage.setTitle("Ejemplo FileChooser");
+        FileChooser fileChooser = new FileChooser();
+        //Este paso es opcional, para dejar al usuario solo seleccionar ciertos tipos de archivo
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos .dat (*.dat)", "*.dat");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Show save file dialog
+        File file = fileChooser.showSaveDialog(stage);
+
+        if (file != null) {
+            //Hacer lo que queramos con el archivo.
+
+            ArrayList<Partido> ficheroAuxGuardar = new ArrayList<Partido>();
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            try {
+                fos= new FileOutputStream(file.getAbsolutePath());
+                oos = new ObjectOutputStream(fos);
+                ficheroAuxGuardar.addAll(Logica.getInstance().getListaPartidos());
+                oos.writeObject(ficheroAuxGuardar);
+                oos.flush();
+
+
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }finally{
+
+
+                try{
+                    if( null != fos ){
+                        fos.close();
+                    }
+                }catch (Exception e2){
+                    e2.printStackTrace();
+                }
+            }
+        }
+    }
+
 
     @FXML
     void anadir(ActionEvent event){
@@ -73,6 +178,7 @@ public class MainController implements Initializable {
             stage.setScene(new Scene(root, 1000, 600));
             stage.showAndWait();
             filtrar();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,6 +199,7 @@ public class MainController implements Initializable {
             stage.setScene(new Scene(root, 1000, 750));
             stage.showAndWait();
             filtrar();
+            stage.setOnCloseRequest(e -> cargarFichero());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -142,6 +249,7 @@ public class MainController implements Initializable {
             }
         });
 
+
     }
 
     private void filtrar()
@@ -154,6 +262,35 @@ public class MainController implements Initializable {
     void quitarFiltro(ActionEvent event) {
         tableViewPartidos.setItems((ObservableList<Partido>) Logica.getInstance().getListaPartidos());
 
+    }
+    public  void cargarFichero() {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            fos= new FileOutputStream("src\\bbdd.dat");
+            oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(Logica.getInstance().getListaPartidos());
+            oos.flush();
+
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+
+
+            try{
+                if( null != fos ){
+                    fos.close();
+                }
+            }catch (Exception e2){
+                e2.printStackTrace();
+            }
+        }
     }
 
     }
