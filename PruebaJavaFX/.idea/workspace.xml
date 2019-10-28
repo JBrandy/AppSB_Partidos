@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecbd9e87-fa6a-4f22-8add-90e6922129c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/balon.jpg" afterDir="false" />
+    <list default="true" id="ecbd9e87-fa6a-4f22-8add-90e6922129c1" name="Default Changelist" comment="Hora del Cafe nome lo actualiza instantaneo">
+      <change afterPath="$PROJECT_DIR$/src/brandy/controladores/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/Launcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/controladores/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/controladores/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/logica/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/logica/Logica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/vistas/mainWinfxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/brandy/vistas/mainWinfxm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PruebaJavaFX/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PruebaJavaFX/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/brandy/controladores/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/controladores/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/brandy/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/logica/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/brandy/vistas/mainWinfxm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/brandy/vistas/mainWinfxm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +36,8 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Java/Controladores/controlsfx-11.0.0.jar!/" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -73,6 +72,7 @@
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="brandy.Launcher" />
       <module name="PruebaJavaFX" />
+      <option name="VM_PARAMETERS" value="--add-opens=javafx.graphics/javafx.scene=org.controlsfx.controls" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -96,6 +96,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Launcher" />
+      <item itemvalue="Application.PantallaMain" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
@@ -170,7 +174,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/brandy/controladores/DialogoPartidosFxmControllr.java</url>
-          <line>107</line>
+          <line>127</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

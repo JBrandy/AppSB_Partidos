@@ -3,6 +3,8 @@ package brandy.controladores;
 import brandy.logica.Logica;
 import brandy.models.Division;
 import brandy.models.Partido;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,7 +15,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -21,7 +27,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class DialogoPartidosFxmControllr implements Initializable {
+public class DialogoPartidosFxmControllr extends  BaseController implements Initializable {
 
     private Partido partidoModificar;
     private int indiceModificar;
@@ -54,9 +60,23 @@ public class DialogoPartidosFxmControllr implements Initializable {
         cbDivision.getItems().add(Division.PRIMERA);
         cbDivision.getItems().add(Division.SEGUNDA);
         cbDivision.getItems().add(Division.TERCERA);
+        ValidationSupport vs = new ValidationSupport();
+        vs.registerValidator(tfLocal, Validator.createEmptyValidator("el campo no puede estar vacio"));
+        vs.registerValidator(tfVisitante, Validator.createEmptyValidator("el campo no puede estar vacio"));
+        vs.registerValidator(tfrLocal, Validator.createEmptyValidator("el campo no puede estar vacio"));
+        vs.registerValidator(tfrVisitante, Validator.createEmptyValidator("el campo no puede estar vacio"));
+
+      /*  vs.invalidProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                btAceptar.setDisable(newValue);
+            }
+        });*/
+
+        // usar uno u otro.
+        btAceptar.disableProperty().bind(vs.invalidProperty());
+       // cbDivision.getItems().addAll(Division.values()); Esta seria la manera correcta
     }
-
-
 
 
     @FXML
@@ -69,7 +89,6 @@ public class DialogoPartidosFxmControllr implements Initializable {
         }
         int resultado_Lo = Integer.parseInt(tfrLocal.getText());
         int resultado_Vi = Integer.parseInt(tfrVisitante.getText());
-
         String sA = String.valueOf(resultado_Lo);
         String sB = String.valueOf(resultado_Vi);
         String resultado = sA + "-" + sB;
@@ -124,5 +143,33 @@ public class DialogoPartidosFxmControllr implements Initializable {
 
 
 
+    }
+
+    public void addValidator() {
+        final String pattern = "^(\\d)+(\\.?\\d*)?$";
+        final int minimo = 0;
+
+        tfrLocal.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.V) {// Esto es para impedir el Ctrl + V de texto en los campos numéricos
+                String textToPaste = Clipboard.getSystemClipboard().getString();
+
+                if (textToPaste != null && !textToPaste.isEmpty()) {
+                    String newText = tfrLocal.getText() + textToPaste;
+
+                    if (!newText.matches(pattern) || Double.parseDouble(newText) <= minimo) {
+                        event.consume();
+                    }
+                } else {
+                    event.consume();
+                }
+            }
+        });
+
+        tfrLocal.setOnKeyTyped(event -> {
+            String newText = tfrLocal.getText() + event.getCharacter();
+            if (!newText.matches(pattern) || Double.parseDouble(newText) <= minimo) {
+                event.consume();
+            }
+        });
     }
 }

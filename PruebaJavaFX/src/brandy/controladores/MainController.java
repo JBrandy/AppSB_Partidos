@@ -74,6 +74,7 @@ public class MainController implements Initializable {
 
     @FXML
     void cargar(ActionEvent event) {
+
         Stage stage = new Stage();
         stage.setTitle("Ejemplo FileChooser");
         FileChooser fileChooser = new FileChooser();
@@ -97,6 +98,7 @@ public class MainController implements Initializable {
                 ois = new ObjectInputStream(fis);
 
                 listaAuxLeer = (ArrayList<Partido>) ois.readObject();
+                Logica.getInstance().getListaPartidos().clear();
                 Logica.getInstance().getListaPartidos().addAll(listaAuxLeer);
 
             }
@@ -175,7 +177,7 @@ public class MainController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/brandy/vistas/DialogoPartidoFxm.fxml")); // de esta manera
             Parent root = fxmlLoader.load();
             stage.setTitle("Alta Partido");
-            stage.setScene(new Scene(root, 1000, 600));
+            stage.setScene(new Scene(root, 700, 400));
             stage.showAndWait();
             filtrar();
 
@@ -196,7 +198,7 @@ public class MainController implements Initializable {
             Partido partido = tableViewPartidos.getSelectionModel().getSelectedItem();
             controllr.setPartidoModificar(partido);
             stage.setTitle("Pantalla Modificar partido");
-            stage.setScene(new Scene(root, 1000, 750));
+            stage.setScene(new Scene(root, 700, 400));
             stage.showAndWait();
             filtrar();
             stage.setOnCloseRequest(e -> cargarFichero());
